@@ -13,9 +13,9 @@ module.exports = {
     "ios.debug": {
       type: "ios.app",
       binaryPath:
-        "/Users/manthan/Desktop/Files/Projects/detox-test/DetoxTestApp/ios/build",
+        "/Users/manthan/Desktop/Files/Projects/detox-test/DetoxTestApp/ios/build/Build/Products/Debug-iphonesimulator/DetoxTestApp.app",
       build:
-        "xcodebuild -workspace ios/DetoxTestApp.xcworkspace -scheme DetoxTestApp -configuration Debug -sdk iphonesimulator -derivedDataPath /Users/manthan/Desktop/Files/Projects/detox-test/DetoxTestApp/ios/build",
+      "xcodebuild -workspace ios/DetoxTestApp.xcworkspace -scheme DetoxTestApp -configuration Debug -sdk iphonesimulator -derivedDataPath /Users/manthan/Desktop/Files/Projects/detox-test/DetoxTestApp/ios/build",
     },
     "ios.release": {
       type: "ios.app",

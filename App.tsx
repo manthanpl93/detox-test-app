@@ -5,7 +5,7 @@
  * @format
  */
 
-import React from 'react';
+import React, {useState} from 'react';
 import type {PropsWithChildren} from 'react';
 import {
   SafeAreaView,
@@ -15,6 +15,7 @@ import {
   Text,
   useColorScheme,
   View,
+  Button,
 } from 'react-native';
 
 import {
@@ -62,6 +63,12 @@ function App(): JSX.Element {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
+  const [label, setLabel] = useState('Please Change Label');
+
+  const changeLabel = () => {
+    setLabel('Label Changed');
+  };
+
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar
@@ -71,12 +78,17 @@ function App(): JSX.Element {
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
-        <Header />
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
-          <LearnMoreLinks />
+          <Text testID="myTextTestId">{label}</Text>
+          <Button
+            onPress={changeLabel}
+            title="Change Label"
+            color="#841584"
+            testID="myButtonTestId"
+          />
         </View>
       </ScrollView>
     </SafeAreaView>
